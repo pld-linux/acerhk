@@ -72,7 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}{,smp}/misc
 install %{_orig_name}-up.ko $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/misc/%{_orig_name}.ko
+%if %{with smp}
 install %{_orig_name}-smp.ko $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/misc/%{_orig_name}.ko
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -89,12 +91,14 @@ rm -rf $RPM_BUILD_ROOT
 %postun	-n kernel-smp-misc-%{_orig_name}
 %depmod %{_kernel_ver}smp
 
-%files -n kernel-misc-%{_orig_name}
+%files
 %defattr(644,root,root,755)
 %doc NEWS INSTALL README doc/*
 /lib/modules/%{_kernel_ver}/misc/*.ko*
 
+%if %{with smp}
 %files -n kernel-smp-misc-%{_orig_name}
 %defattr(644,root,root,755)
 %doc NEWS INSTALL README doc/*
 /lib/modules/%{_kernel_ver}smp/misc/*.ko*
+%endif
