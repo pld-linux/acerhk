@@ -1,12 +1,13 @@
+#
 # Conditional build:
 %bcond_without	dist_kernel	# without distribution kernel
 %bcond_without	smp		# don't build SMP module
-
+#
 %define _rel		1
 %define _orig_name	acerhk
 
-Summary:	Driver for a special Acer Hot Keys.
-Summary(pl):	Sterownik obsluguj±cy specjalne klawisze w notebookach Acer.
+Summary:	Linux driver for special Acer Hot Keys
+Summary(pl):	Sterownik dla Linuksa obs³uguj±cy specjalne klawisze w notebookach Acer
 Name:		kernel-misc-%{_orig_name}
 Version:	0.5.18
 Release:	%{_rel}@%{_kernel_ver_str}
@@ -14,39 +15,35 @@ License:	GPL
 Group:		Base/Kernel
 Source0:	http://www.informatik.hu-berlin.de/~tauber/acerhk/archives/%{_orig_name}-%{version}.tgz
 # Source0-md5:	2627c1760a1d8e22ad4d4519475cf0c6
+URL:		http://www.informatik.hu-berlin.de/~tauber/acerhk/
 %{?with_dist_kernel:BuildRequires:	kernel-module-build >= 2.6.0}
 BuildRequires:	%{kgcc_package}
 BuildRequires:	rpmbuild(macros) >= 1.118
-URL:		http://www.informatik.hu-berlin.de/~tauber/acerhk/
 %{?with_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is a driver for a special Acer Hot Keys.
+This is a Linux driver for special Acer Hot Keys.
 
 %description -l pl
-Sterownik pozwalaj±cy uaktywniæ specjalne przyciski w notebookach Acer.
-
-%description -n kernel-misc-%{_orig_name}
-This is a driver for a special Acer Hot Keys.
-
-%description -n kernel-misc-%{_orig_name} -l pl
-Sterownik pozwalaj±cy uaktywniæ specjalne przyciski w notebookach Acer.
+Sterownik dla Linuksa pozwalaj±cy uaktywniæ specjalne przyciski w
+notebookach Acer.
 
 %package -n kernel-smp-misc-%{_orig_name}
-Summary:	This is a driver for a special Acer Hot Keys.
-Summary(pl):	Sterownik pozwalaj±cy uaktywniæ specjalne przyciski w notebookach Acer.
+Summary:	This is a Linux SMP driver for special Acer Hot Keys
+Summary(pl):	Sterownik dla Linuksa SMP obs³uguj±cy specjalne przyciski w notebookach Acer
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
 Requires(post,postun):	/sbin/depmod
 
 %description -n kernel-smp-misc-%{_orig_name}
-This is a driver for a special Acer Hot Keys.
+This is a Linux SMP driver for special Acer Hot Keys.
 
 %description -n kernel-smp-misc-%{_orig_name} -l pl
-Sterownik pozwalaj±cy uaktywniæ specjalne przyciski w notebookach Acer.
+Sterownik dla Linuksa SMP pozwalaj±cy uaktywniæ specjalne przyciski w
+notebookach Acer.
 
 %prep
 %setup -q -n %{_orig_name}-%{version}
