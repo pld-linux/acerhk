@@ -16,8 +16,8 @@ Group:		Base/Kernel
 Source0:	http://www.informatik.hu-berlin.de/~tauber/acerhk/archives/%{_orig_name}-%{version}.tgz
 # Source0-md5:	0bf2ae26bd2acaee72863bc9ee550f19
 URL:		http://www.informatik.hu-berlin.de/~tauber/acerhk/
-%{?with_dist_kernel:BuildRequires:	kernel-module-build >= 2.6.0}
 BuildRequires:	%{kgcc_package}
+%{?with_dist_kernel:BuildRequires:	kernel-module-build >= 3:2.6.0}
 BuildRequires:	rpmbuild(macros) >= 1.118
 %{?with_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
