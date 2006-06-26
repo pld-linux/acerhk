@@ -9,12 +9,12 @@
 Summary:	Linux driver for Acer notebook special Hot Keys
 Summary(pl):	Sterownik dla Linuksa obs³uguj±cy specjalne klawisze w notebookach Acer
 Name:		kernel-misc-%{_orig_name}
-Version:	0.5.32
+Version:	0.5.33
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL
 Group:		Base/Kernel
 Source0:	http://www.informatik.hu-berlin.de/~tauber/acerhk/archives/%{_orig_name}-%{version}.tgz
-# Source0-md5:	0bf2ae26bd2acaee72863bc9ee550f19
+# Source0-md5:	51221e791dc5c3dccd4d9c9fd42cb249
 URL:		http://www.informatik.hu-berlin.de/~tauber/acerhk/
 BuildRequires:	%{kgcc_package}
 %{?with_dist_kernel:BuildRequires:	kernel-module-build >= 3:2.6.0}
