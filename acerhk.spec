@@ -21,6 +21,7 @@ BuildRequires:	%{kgcc_package}
 BuildRequires:	rpmbuild(macros) >= 1.118
 %{?with_dist_kernel:%requires_releq_kernel_up}
 Requires(post,postun):	/sbin/depmod
+ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
