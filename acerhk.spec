@@ -7,7 +7,7 @@
 %define _orig_name	acerhk
 
 Summary:	Linux driver for Acer notebook special Hot Keys
-Summary(pl.UTF-8):   Sterownik dla Linuksa obsługujący specjalne klawisze w notebookach Acer
+Summary(pl.UTF-8):	Sterownik dla Linuksa obsługujący specjalne klawisze w notebookach Acer
 Name:		kernel-misc-%{_orig_name}
 Version:	0.5.33
 Release:	%{_rel}@%{_kernel_ver_str}
@@ -33,7 +33,7 @@ notebookach Acer.
 
 %package -n kernel-smp-misc-%{_orig_name}
 Summary:	This is a Linux SMP driver for special Acer Hot Keys
-Summary(pl.UTF-8):   Sterownik dla Linuksa SMP obsługujący specjalne przyciski w notebookach Acer
+Summary(pl.UTF-8):	Sterownik dla Linuksa SMP obsługujący specjalne przyciski w notebookach Acer
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel_smp}
