@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_without	dist_kernel	# without distribution kernel
 #
-%define _rel		1
+%define _rel		2
 %define _orig_name	acerhk
 
 Summary:	Linux driver for Acer notebook special Hot Keys
