@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_without	dist_kernel	# without distribution kernel
 #
-%define _rel		2
+%define _rel		3
 %define _orig_name	acerhk
 
 Summary:	Linux driver for Acer notebook special Hot Keys
@@ -56,10 +56,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS INSTALL README doc/*
 /lib/modules/%{_kernel_ver}/misc/*.ko*
-
-%if %{with smp}
-%files -n kernel-smp-misc-%{_orig_name}
-%defattr(644,root,root,755)
-%doc NEWS INSTALL README doc/*
-/lib/modules/%{_kernel_ver}smp/misc/*.ko*
-%endif
