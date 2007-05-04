@@ -16,8 +16,8 @@ Source0:	http://www.cakey.de/acerhk/archives/%{_orig_name}-%{version}.tar.bz2
 # Source0-md5:	551285657c8ba338f23595af257d21df
 URL:		http://www.cakey.de/acerhk/
 BuildRequires:	%{kgcc_package}
-%{?with_dist_kernel:BuildRequires:	kernel-module-build >= 3:2.6.0}
-BuildRequires:	rpmbuild(macros) >= 1.118
+%{?with_dist_kernel:BuildRequires:	kernel-module-build >= 3:2.6.20.2}
+BuildRequires:	rpmbuild(macros) >= 1.379
 %{?with_dist_kernel:%requires_releq_kernel}
 Requires(post,postun):	/sbin/depmod
 ExclusiveArch:	%{ix86}
