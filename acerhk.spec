@@ -2,14 +2,12 @@
 # Conditional build:
 %bcond_without	dist_kernel	# without distribution kernel
 #
-%define _rel		14
-%define _orig_name	acerhk
-
 Summary:	Linux driver for Acer notebook special Hot Keys
 Summary(pl.UTF-8):	Sterownik dla Linuksa obsługujący specjalne klawisze w notebookach Acer
-Name:		%{_orig_name}
+Name:		acerhk
 Version:	0.5.35
-Release:	%{_rel}
+%define rel	14
+Release:	%{rel}
 License:	GPL
 Group:		Base/Kernel
 Source0:	http://www.cakey.de/acerhk/archives/%{name}-%{version}.tar.bz2
@@ -34,7 +32,7 @@ notebookach Acer.
 %package -n kernel%{_alt_kernel}-misc-acerhk
 Summary:	Linux driver for Acer notebook special Hot Keys
 Summary(pl.UTF-8):	Sterownik dla Linuksa obsługujący specjalne klawisze w notebookach Acer
-Release:	%{_rel}@%{_kernel_ver_str}
+Release:	%{rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 %{?with_dist_kernel:%requires_releq_kernel}
 Requires(post,postun):	/sbin/depmod
@@ -60,13 +58,13 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-n kernel%{_alt_kernel}-misc-%{_orig_name}
+%post	-n kernel%{_alt_kernel}-misc-%{name}
 %depmod %{_kernel_ver}
 
-%postun	-n kernel%{_alt_kernel}-misc-%{_orig_name}
+%postun	-n kernel%{_alt_kernel}-misc-%{name}
 %depmod %{_kernel_ver}
 
-%files -n kernel%{_alt_kernel}-misc-%{_orig_name}
+%files -n kernel%{_alt_kernel}-misc-%{name}
 %defattr(644,root,root,755)
 %doc NEWS INSTALL README doc/*
 /lib/modules/%{_kernel_ver}/misc/*.ko*
