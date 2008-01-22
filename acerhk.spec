@@ -2,11 +2,11 @@
 # Conditional build:
 %bcond_without	dist_kernel	# without distribution kernel
 #
+%define		rel	15
 Summary:	Linux driver for Acer notebook special Hot Keys
 Summary(pl.UTF-8):	Sterownik dla Linuksa obsługujący specjalne klawisze w notebookach Acer
 Name:		acerhk
 Version:	0.5.35
-%define rel	14
 Release:	%{rel}
 License:	GPL
 Group:		Base/Kernel
