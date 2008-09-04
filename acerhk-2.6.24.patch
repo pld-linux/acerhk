@@ -1,0 +1,11 @@
+--- acerhk-0.5.35/Makefile~	2006-08-16 18:11:08.000000000 +0200
++++ acerhk-0.5.35/Makefile	2008-09-04 15:09:10.781069452 +0200
+@@ -14,7 +14,7 @@
+ CONFIG_ACERHK?=m
+ obj-$(CONFIG_ACERHK) += acerhk.o
+ 
+-CFLAGS+=-c -Wall -Wstrict-prototypes -Wno-trigraphs -O2 -fomit-frame-pointer -fno-strict-aliasing -fno-common -pipe
++EXTRA_CFLAGS+=-c -Wall -Wstrict-prototypes -Wno-trigraphs -O2 -fomit-frame-pointer -fno-strict-aliasing -fno-common -pipe
+ INCLUDE=-I$(KERNELSRC)/include
+ 
+ ifeq ($(KERNELMAJOR), 2.6)
