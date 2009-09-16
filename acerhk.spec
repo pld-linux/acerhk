@@ -19,7 +19,7 @@ BuildRequires:	%{kgcc_package}
 %{?with_dist_kernel:BuildRequires:	kernel-module-build >= 3:2.6.20.2}
 BuildRequires:	rpmbuild(macros) >= 1.379
 Requires(post,postun):	/sbin/depmod
-ExclusiveArch:	%{ix86}
+ExclusiveArch:	%{x8664} %{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define	modules	acerhk
