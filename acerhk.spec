@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_without	dist_kernel	# without distribution kernel
 #
-%define		rel	43
+%define		rel	44
 Summary:	Linux driver for Acer notebook special Hot Keys
 Summary(pl.UTF-8):	Sterownik dla Linuksa obsługujący specjalne klawisze w notebookach Acer
 Name:		acerhk
@@ -13,6 +13,7 @@ Group:		Base/Kernel
 Source0:	http://www.cakey.de/acerhk/archives/%{name}-%{version}.tar.bz2
 # Source0-md5:	551285657c8ba338f23595af257d21df
 Patch0:		%{name}-2.6.24.patch
+Patch1:		%{name}-2.6.30.patch
 URL:		http://www.cakey.de/acerhk/
 BuildRequires:	%{kgcc_package}
 %{?with_dist_kernel:BuildRequires:	kernel-module-build >= 3:2.6.20.2}
@@ -48,6 +49,7 @@ notebookach Acer.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %build_kernel_modules -m %{modules}
