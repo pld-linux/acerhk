@@ -51,6 +51,11 @@ notebookach Acer.
 %patch0 -p1
 %patch1 -p1
 
+cat > Makefile << EOF
+obj-m += acerhk.o
+%{?debug:CFLAGS += -DCONFIG_MODULE_NAME_DEBUG=1}
+EOF
+
 %build
 %build_kernel_modules -m %{modules}
 
