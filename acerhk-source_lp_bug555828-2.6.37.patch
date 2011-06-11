@@ -1,0 +1,28 @@
+diff -upN acerhk.old//acerhk.c acerhk//acerhk.c
+--- acerhk.old//acerhk.c	2011-01-30 01:08:21.276542993 +0200
++++ acerhk//acerhk.c	2011-01-30 01:11:57.692542994 +0200
+@@ -2827,10 +2827,10 @@ static void acerhk_proc_cleanup(void)
+ 
+ /* {{{ file operations */
+ 
+-static int acerhk_ioctl( struct inode *inode, struct file *file,
++static long acerhk_ioctl( struct file *file,
+                          unsigned int cmd, unsigned long arg )
+ {
+-  int retval;
++  long retval;
+   switch( cmd ) {
+   case ACERHK_GET_KEYCOUNT:
+     {
+@@ -2938,7 +2938,7 @@ static int acerhk_resume(struct platform
+ 
+ static struct file_operations acerhk_fops = {
+   owner:        THIS_MODULE,
+-  ioctl:        acerhk_ioctl,
++  unlocked_ioctl:        acerhk_ioctl,
+   open:         acerhk_open,
+ #ifdef ACERDEBUG
+   write:        acerhk_write,
+Common subdirectories: acerhk.old//debian and acerhk//debian
+Common subdirectories: acerhk.old//doc and acerhk//doc
+Common subdirectories: acerhk.old//.tmp_versions and acerhk//.tmp_versions

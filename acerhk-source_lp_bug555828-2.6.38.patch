@@ -1,0 +1,16 @@
+## Description: add some description
+## Origin/Author: add some origin or author
+## Bug: bug URL
+Index: acerhk-0.5.35/acerhk.c
+===================================================================
+--- acerhk-0.5.35.orig/acerhk.c	2011-05-16 23:39:15.000000000 +0200
++++ acerhk-0.5.35/acerhk.c	2011-05-16 23:39:10.000000000 +0200
+@@ -36,7 +36,7 @@
+  */
+ 
+ #ifndef AUTOCONF_INCLUDED
+-#include <linux/config.h>
++#include <generated/autoconf.h>
+ #endif
+ 
+ /* This driver is heavily dependent on the architecture, don't let
